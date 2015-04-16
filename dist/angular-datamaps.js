@@ -44,9 +44,7 @@ angular.module('datamaps').directive('datamap', [
           } else if (!scope.options.fillQuartiles) {
             var fillKeys = [];
             angular.forEach(data, function (data) {
-              if (fillKeys.indexOf(data.value) === -1) {
-                fillKeys.push(data.value);
-              }
+              fillKeys.push(data.value);
             });
             if (angular.isUndefined(scope.colors)) {
               scope.colors = defaultColors();
