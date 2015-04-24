@@ -154,10 +154,10 @@ angular.module('datamaps')
         // Watch data changing. Only refresh if options or data map points have changed
         scope.$watch('data', function(data, old) {
           // Return if no data
-          if (!data.length) {
+          if (!data) {
             return;
           }
-          if (!old.length || data[0].values.length !== old[0].values.length) {
+          if (!old || data[0].values.length !== old[0].values.length) {
             scope.api.refresh();
           }
           else {
